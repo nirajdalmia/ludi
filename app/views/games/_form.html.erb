@@ -11,6 +11,41 @@
     </div>
   <% end %>
 
+<div class="panel panel-default">
+	<div class="panel-heading">
+	</div>
+	<div class="panel-body">
+
+  <div class="form-group">
+    <%= f.label :sport %>
+    <%= f.text_field :sport, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :level %>
+    <%= f.text_field :level, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :players %>
+    <%= f.text_field :players, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Date %>
+    <%= f.text_field :daytime, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>
@@ -20,6 +55,8 @@
     <%= f.label :description %><br>
     <%= f.text_field :description, class: "form-control" %>
   </div>
+	</div>
+	</div>
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
