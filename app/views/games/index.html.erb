@@ -1,21 +1,24 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Games</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @games.each do |game| %>
       <tr>
+        <td><%= image_tag game.image.url(:medium) %></td>
         <td><%= game.description %></td>
         <td><%= game.user.email if game.user %></td>
-        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Show', game_path(game) %></td>
          <% if game.user == current_user %>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
