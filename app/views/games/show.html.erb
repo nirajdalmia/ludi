@@ -8,7 +8,7 @@
       </div>
       <div class="panel-body">
         <p><%= @game.description %></p>
-        <p><strong><%= @game.user.email if @game.user %></strong></p>
+        <p><strong><%= @game.user.name if @game.user %></strong></p>
 
       <%= link_to edit_game_path(@game) do %>
         <span class="glyphicon glyphicon-edit"></span>

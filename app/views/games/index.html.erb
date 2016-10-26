@@ -6,7 +6,7 @@
       <%= link_to image_tag(game.image.url(:medium)), game %>
       <div class="panel-body">
       <%= game.description %><br/>
-      <strong><%= game.user.email if game.user %></strong>
+      <strong><%= game.user.name if game.user %></strong>
       <% if game.user == current_user %>
       <div class="actions">
              <%= link_to edit_game_path(game) do %>
