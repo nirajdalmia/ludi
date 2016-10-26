@@ -1,35 +1,15 @@
-<h1>Listing Games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= image_tag game.image.url(:medium) %></td>
-        <td><%= game.description %></td>
-        <td><%= game.user.email if game.user %></td>
-        <td><%= link_to 'Show', game_path(game) %></td>
-         <% if game.user == current_user %>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<% if user_signed_in? %>
-<%= link_to 'New Game', new_game_path %>
-<% end %>
+<div id="games" class="transitions-enabled">
+  <% @games.each do |game| %>
+    <div class="box panel panel-default">
+      <%= image_tag game.image.url(:medium) %>
+      <div class="panel-body">
+      <%= game.description %>
+      <%= game.user.email if game.user %>
+      <%= link_to 'Show', game_path(game) %>
+      <% if game.user == current_user %>
+        <%= link_to 'Edit', edit_game_path(game) %>
+        <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
