@@ -14,9 +14,12 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.description %></td>
+        <td><%= game.user.email if game.user %></td>
         <td><%= link_to 'Show', game %></td>
+         <% if game.user == current_user %>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +27,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Game', new_game_path %>
+<% end %>

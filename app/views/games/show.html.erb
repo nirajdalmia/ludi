@@ -4,6 +4,7 @@
   <strong>Description:</strong>
   <%= @game.description %>
 </p>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
+  <% if @game.user == current_user %>
+    <%= link_to 'Edit', edit_game_path(@game) %> |
+  <% end %>
 <%= link_to 'Back', games_path %>
