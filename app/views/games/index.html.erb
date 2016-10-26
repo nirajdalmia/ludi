@@ -5,7 +5,13 @@
     <div class="box panel panel-default">
       <%= link_to image_tag(game.image.url(:medium)), game %>
       <div class="panel-body">
-      <%= game.description %><br/>
+      Sport: <%= game.sport %><br/>
+      Level: <%= game.level %><br/>
+      Location: <%= game.location %><br/>
+      Price: $<%= game.price %><br/>
+      Players: <%= game.players %><br/>
+      Date: <%= game.daytime %><br/>
+      Description: <%= game.description %><br/>
       <strong><%= game.user.name if game.user %></strong>
       <% if game.user == current_user %>
       <div class="actions">
@@ -18,6 +24,14 @@
               Delete
             <% end %>
          </div>
+        <% end %>
+      <% if game.user != current_user %>
+      <div class="actions">
+             <%= link_to game do %>
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              Join
+        <% end %>
+      </div>
         <% end %>
       </div>
     </div>
