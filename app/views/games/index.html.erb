@@ -1,15 +1,25 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
 <div id="games" class="transitions-enabled">
   <% @games.each do |game| %>
     <div class="box panel panel-default">
-      <%= image_tag game.image.url(:medium) %>
+      <%= link_to image_tag(game.image.url(:medium)), game %>
       <div class="panel-body">
-      <%= game.description %>
-      <%= game.user.email if game.user %>
-      <%= link_to 'Show', game_path(game) %>
+      <%= game.description %><br/>
+      <strong><%= game.user.email if game.user %></strong>
       <% if game.user == current_user %>
-        <%= link_to 'Edit', edit_game_path(game) %>
-        <%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+      <div class="actions">
+             <%= link_to edit_game_path(game) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to game, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+         </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
