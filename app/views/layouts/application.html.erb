@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pinteresting</title>
+  <title>ludi</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,9 +10,9 @@
 </head>
 <body>
 	<%= render 'layouts/header' %>
-	<div class="container">
+<!--	<div class="container"> -->
 		<%= yield %>
-	 </div>
+<!--	 </div> -->
 		<% flash.each do |name, msg| %>
      <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
     <% end %>
