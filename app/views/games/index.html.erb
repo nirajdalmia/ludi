@@ -3,7 +3,6 @@
 <div id="games" class="transitions-enabled">
   <% @games.each do |game| %>
     <div class="box panel panel-default">
-      <%= link_to image_tag(game.image.url(:medium)), game %>
       <div class="panel-body">
       Sport: <%= game.sport %><br/>
       Level: <%= game.level %><br/>
