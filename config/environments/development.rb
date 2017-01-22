@@ -40,13 +40,13 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV('ludi'),
-    access_key_id: ENV('AKIAIHFDAM5AB5FSYP6A'),
-    secret_access_key: ENV('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'),
-    s3_region: ENV('US Standard'),
-  }
-}
+#config.paperclip_defaults = {
+#  storage: :s3,
+#  s3_credentials: {
+#    bucket: ENV.fetch('ludi'),
+#    access_key_id: ENV.fetch('AKIAIHFDAM5AB5FSYP6A'),
+#    secret_access_key: ENV.fetch('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'),
+#    s3_region: ENV.fetch('US Standard'),
+#  }
+#}
 end
