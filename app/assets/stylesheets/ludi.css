@@ -159,7 +159,8 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../assets/header.jpg');
+ /* background-image: url('../assets/header.jpg');*/
+ background-image: url(http://ludi.s3.amazonaws.com/header.jpg);
   text-align: center;
   color: white;
 }
